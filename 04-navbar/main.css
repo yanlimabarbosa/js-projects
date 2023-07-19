@@ -5,7 +5,7 @@
 }
 /* fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Montserrat&display=swap");
 html {
   font-size: 100%;
 } /*16px*/
@@ -42,8 +42,8 @@ html {
   --green-dark: #0f5132;
 
   /* fonts  */
-  --headingFont: 'Roboto', sans-serif;
-  --bodyFont: 'Nunito', sans-serif;
+  --headingFont: "Roboto", sans-serif;
+  --bodyFont: "Nunito", sans-serif;
   --smallText: 0.7em;
   /* rest of the vars */
   --backgroundColor: var(--grey-50);
@@ -257,3 +257,107 @@ ul {
 Navbar
 ===============
 */
+body {
+  margin: 0;
+}
+nav {
+  background: var(--white);
+  box-shadow: var(--shadow-2);
+  line-height: 1;
+}
+/* .nav-center{
+  display: flex;
+} */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--primary-500);
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.nav-toggle:hover {
+  color: var(--primary-300);
+  padding-right: 0.6rem;
+}
+.logo {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.logo span {
+  color: var(--primary-500);
+}
+.links {
+  margin: 0;
+  /* overflow transition todo */
+  /* get height 10rem*/
+}
+/* todo .show-links */
+.links a {
+  color: var(--grey-700);
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  display: block;
+  padding: 0.75rem 1rem;
+  transition: var(--transition);
+}
+.links a:hover {
+  background: var(--grey-300);
+  color: var(--primary-500);
+  padding-left: 1.5rem;
+}
+.social-icons {
+  display: none;
+}
+@media (min-width: 800px) {
+  .nav-toggle {
+    display: none;
+  }
+  .nav-center {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .links {
+    display: flex;
+  }
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .social-icons a {
+    margin: 0 0.5rem;
+  }
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+  #teste{
+    padding: 0;
+  }
+  }
+  .social-icons a {
+    margin: 0 0.5rem;
+    color: var(--primary-500);
+    transition: var(--transition);
+  }
+  .social-icons a:hover{
+    color: var(--primary-300);
+  }
+}
