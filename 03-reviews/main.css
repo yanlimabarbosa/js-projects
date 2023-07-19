@@ -258,3 +258,103 @@ ul {
 Reviews
 ===============
 */
+main {
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+}
+.container {
+  width: 80vw;
+  max-width: var(--fixed-width);
+}
+
+.review {
+  margin-top: 3rem;
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-1);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.review:hover {
+  box-shadow: var(--shadow-4);
+}
+.img-container {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 1.1rem;
+}
+#person-img {
+  width: 9.3rem;
+  height: 9.3rem;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+}
+.img-container::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--primary-500);
+  position: absolute;
+  border-radius: 50%;
+  top: -0.28rem;
+  right: -0.5rem;
+}
+.img-container::after {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--primary-500);
+  border-radius: 50%;
+  content: "";
+  color: var(--white);
+  transform: translateY(25%);
+  font-family: "Font Awesome 5 Free";
+  content: "\f10e";
+  font-weight: 900;
+  align-items: center;
+  justify-content: center;
+}
+#job {
+  margin-top: -0.6rem;
+  margin-bottom: -0.5rem;
+  text-transform: uppercase;
+  color: var(--primary-500);
+  font-size: 0.85rem;
+}
+.prev-btn,
+.next-btn {
+  color: var(--primary-300);
+  font-size: 1.25rem;
+  background: transparent;
+  border-color: transparent;
+  margin: 0 0.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.prev-btn:hover,
+.next-btn:hover {
+  color: var(--primary-500);
+}
+.random-btn {
+  margin-top: 0.75rem;
+  background: var(--primary-100);
+  color: var(--primary-500);
+  border: 2px solid var(--primary-500);
+  padding: 0.25rem 0.5rem;
+}
+.random-btn:hover {
+  background: var(--primary-500);
+  color: var(--primary-100);
+  font-size: 0.9rem;
+}
