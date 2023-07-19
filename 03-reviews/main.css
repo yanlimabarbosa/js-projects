@@ -258,10 +258,15 @@ ul {
 Reviews
 ===============
 */
+body {
+  margin: 0;
+}
+
 main {
   min-height: 100vh;
   display: grid;
   justify-content: center;
+  background: rgba(173, 216, 230, 0.367);
 }
 .container {
   width: 80vw;
