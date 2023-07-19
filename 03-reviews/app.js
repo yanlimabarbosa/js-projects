@@ -22,6 +22,12 @@ const reviews = [
     text: "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.",
   },
   {
+    name: "Claire Thompson",
+    job: "back-end developer",
+    img: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
+    text: "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
+  },
+  {
     id: 4,
     name: "bill anderson",
     job: "the boss",
@@ -31,10 +37,8 @@ const reviews = [
 ]
 
 // selecting items
-console.log(document)
 const image = document.querySelector("img")
 
-console.log(image)
 const author = document.getElementById("author")
 const job = document.getElementById("job")
 const info = document.getElementById("info")
@@ -44,9 +48,60 @@ const nextBtn = document.querySelector(".next-btn")
 const randomBtn = document.querySelector(".random-btn")
 
 // setting starting item
-let currentItem = 2
+let currentItem = 0
 
 // load initial item
-const item = reviews[currentItem]
-image.src = item.img
-console.log("u did it")
+window.addEventListener("DOMContentLoaded", () => {
+  showReview(currentItem)
+})
+
+function showReview(person) {
+  image.src = reviews[person].img
+  author.textContent = reviews[person].name
+  job.textContent = reviews[person].job
+  info.textContent = reviews[person].text
+}
+
+// Event listener for the "Next" button
+nextBtn.addEventListener("click", () => {
+  currentItem++
+  if (currentItem >= reviews.length) {
+    currentItem = 0
+  }
+  showReview(currentItem)
+})
+
+prevBtn.addEventListener("click", () => {
+  currentItem--
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1
+  }
+  showReview(currentItem)
+})
+
+// randomBtn.addEventListener("click", () => {
+
+//   currentItem = Math.floor(Math.random() * reviews.length)
+//   showReview(currentItem)
+//   console.log(currentItem)
+// })
+
+// Add a variable to store the previously displayed index
+let previousIndex = -1
+
+randomBtn.addEventListener("click", () => {
+  let newIndex
+  do {
+    newIndex = Math.floor(Math.random() * reviews.length)
+  } while (newIndex === previousIndex)
+
+  currentItem = newIndex
+  previousIndex = newIndex
+
+  showReview(currentItem)
+  console.log(currentItem)
+})
+
+function getRandom() {
+  return Math.random()
+}
