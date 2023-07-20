@@ -295,10 +295,15 @@ nav {
 }
 .links {
   margin: 0;
-  /* overflow transition todo */
-  /* get height 10rem*/
+  height: 0;
+  overflow: hidden;
 }
-/* todo .show-links */
+
+.show-links {
+  height: 10rem;
+  transition: var(--transition);
+}
+
 .links a {
   color: var(--grey-700);
   text-transform: capitalize;
@@ -348,16 +353,15 @@ nav {
     padding: 0;
     background: transparent;
   }
-  #teste{
+  #teste {
     padding: 0;
   }
-  }
-  .social-icons a {
-    margin: 0 0.5rem;
-    color: var(--primary-500);
-    transition: var(--transition);
-  }
-  .social-icons a:hover{
-    color: var(--primary-300);
-  }
+}
+.social-icons a {
+  margin: 0 0.5rem;
+  color: var(--primary-500);
+  transition: var(--transition);
+}
+.social-icons a:hover {
+  color: var(--primary-300);
 }
