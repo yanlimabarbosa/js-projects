@@ -334,6 +334,7 @@ nav {
   }
   .links {
     display: flex;
+    height: auto;
   }
   .links a {
     padding: 0;
@@ -352,9 +353,6 @@ nav {
   .links a:hover {
     padding: 0;
     background: transparent;
-  }
-  #teste {
-    padding: 0;
   }
 }
 .social-icons a {
