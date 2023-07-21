@@ -74,29 +74,12 @@ const menu = [
 ];
 
 const sectionCenter = document.querySelector(".section-center")
+const btnContainer = document.querySelector(".btn-container")
 
-window.addEventListener('DOMContentLoaded',()=>{
-  displayMenuItems(menu)
-})
-
-const filterButtons = document.querySelectorAll(".filter-btn") 
-
-filterButtons.forEach((button)=>{
-  button.addEventListener("click", (e) =>{
-    const category = e.currentTarget.dataset.id;
-    const menuCategory = menu.filter((menuItem)=>{
-      if(menuItem.category===category){
-        return menuItem
-      }
-    })
-    if(category === 'all'){
-      displayMenuItems(menu)
-    }
-    else{
-      displayMenuItems(menuCategory)
-    }
-  })
-})
+window.addEventListener('DOMContentLoaded', () => {
+  displayMenuItems(menu);
+  displayMenuButtons()
+});
 
 function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map((item) => {
@@ -115,4 +98,40 @@ function displayMenuItems(menuItems) {
     })
     displayMenu = displayMenu.join("")
     sectionCenter.innerHTML = displayMenu
+}
+
+function displayMenuButtons(){
+    const categories = menu.reduce(
+      (values, item) => {
+        if (!values.includes(item.category)) {
+          values.push(item.category)
+        }
+        return values
+      },
+      ["all"]
+    )
+    categoryBtns = categories
+      .map((category) => {
+        return `<button class="filter-btn" type="button" data-id=${category}>${category}</button>`
+      })
+      .join("")
+    btnContainer.innerHTML = categoryBtns
+
+    const filterButtons = document.querySelectorAll(".filter-btn")
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const category = e.currentTarget.dataset.id
+        const menuCategory = menu.filter((menuItem) => {
+          if (menuItem.category === category) {
+            return menuItem
+          }
+        })
+        if (category === "all") {
+          displayMenuItems(menu)
+        } else {
+          displayMenuItems(menuCategory)
+        }
+      })
+    })
 }
