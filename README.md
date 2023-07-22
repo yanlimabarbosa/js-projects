@@ -10,3 +10,4 @@
 08 - https://menu-yan.netlify.app/<br>
 09 - https://video-yan.netlify.app/<br>
 10 - https://scroll-yan.netlify.app/<br>
+11 - https://tabs-yan.netlify.app/<br>
