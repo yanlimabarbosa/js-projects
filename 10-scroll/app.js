@@ -31,20 +31,20 @@ window.addEventListener("scroll", () => {
 
   if (scrollHeight > 800) {
     topLink.classList.add("show-link")
-  }else{
+  } else {
     topLink.classList.remove("show-link")
   }
 })
 // ********** smooth scroll ************
 // select links
-const scrollLinks = document.querySelectorAll('.scroll-link')
+const scrollLinks = document.querySelectorAll(".scroll-link")
 
-scrollLinks.forEach((link)=>{
-  link.addEventListener("click",(e)=>{
+scrollLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
     // prevent default
     e.preventDefault()
     // navigate to specific spot
-    const id = e.currentTarget.getAttribute('href').slice(1)
+    const id = e.currentTarget.getAttribute("href").slice(1)
     const element = document.getElementById(id)
     // calculate the heights
     const navHeight = navbar.getBoundingClientRect().height
@@ -52,10 +52,10 @@ scrollLinks.forEach((link)=>{
     const fixedNav = navbar.classList.contains("fixed-nav")
     let position = element.offsetTop - navHeight
 
-    if(!fixedNav){
+    if (!fixedNav) {
       position = position - navHeight
     }
-    if(navHeight>82){
+    if (navHeight > 82) {
       position = position + containerHeight
     }
 

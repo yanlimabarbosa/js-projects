@@ -13,6 +13,6 @@ btn.addEventListener("click", () => {
   document.body.style.backgroundColor = hexColor
 })
 
-getRandomNumber = () =>{
+getRandomNumber = () => {
   return Math.floor(Math.random() * hex.length)
 }

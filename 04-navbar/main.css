@@ -128,6 +128,7 @@ ul {
 .img {
   width: 100%;
   display: block;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 /* buttons */
@@ -211,6 +212,22 @@ ul {
 .form-textarea {
   height: 7rem;
 }
+::-webkit-input-placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+::-moz-placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+:-ms-input-placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+::-ms-input-placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
 ::placeholder {
   font-family: inherit;
   color: var(--grey-400);
@@ -221,6 +238,12 @@ ul {
   text-transform: capitalize;
 }
 /* alert */
+
+@-webkit-keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 @keyframes spinner {
   to {
@@ -234,6 +257,7 @@ ul {
   border: 5px solid var(--grey-400);
   border-radius: 50%;
   border-top-color: var(--primary-500);
+  -webkit-animation: spinner 0.6s linear infinite;
   animation: spinner 0.6s linear infinite;
 }
 .loading {

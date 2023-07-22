@@ -364,6 +364,7 @@ footer p {
   place-items: center;
   border-radius: var(--radius);
   color: var(--clr-white);
+  -webkit-animation: bounce 2s ease-in-out infinite;
   animation: bounce 2s ease-in-out infinite;
 
   visibility: hidden;
@@ -372,6 +373,18 @@ footer p {
 .show-link {
   visibility: visible;
   z-index: 100;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes bounce {
