@@ -26,14 +26,18 @@ const giveaway = document.querySelector(".giveaway")
 const deadline = document.querySelector(".deadline")
 const items = document.querySelectorAll(".deadline-format h4")
 
+let tempDate = new Date()
+let tempYear = tempDate.getFullYear()
+let tempMonth = tempDate.getMonth()
+let tempDay = tempDate.getDate()
+
 let actualYear = new Date().getFullYear()
-let futureDate = new Date(actualYear, 11, 28, 23, 30, 0)
+let futureDate = new Date(tempYear, tempMonth, tempDay + 10, 12, 30, 0)
+// let futureDate = new Date(actualYear, 11, 28, 23, 30, 0)
 
 const year = futureDate.getFullYear()
-
 let month = futureDate.getMonth()
 month = months[month]
-
 const day = futureDate.getDay()
 const hours = futureDate.getHours()
 const minutes = futureDate.getMinutes()
@@ -41,8 +45,18 @@ const minutes = futureDate.getMinutes()
 const weekday = weekdays[futureDate.getDay()]
 const date = futureDate.getDate()
 
-giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}am`
+function hoursFormatation(hours) {
+  if (hours >= 12) {
+    return `PM`
+  }
+  if (hours < 12) {
+    return "AM"
+  } else {
+    return ""
+  }
+}
 
+giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}${hoursFormatation(hours)}`
 const futureTime = futureDate.getTime()
 
 function getRemainingTime() {
