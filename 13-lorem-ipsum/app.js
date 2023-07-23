@@ -52,6 +52,3 @@ form
     }
   })
 
-  .map(function (item) {
-    return `<p class="result">${item}</p>`
-  })
