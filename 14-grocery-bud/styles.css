@@ -230,6 +230,22 @@ Grocery List
   flex: 1 0 auto;
   color: var(--clr-grey-5);
 }
+#grocery::-webkit-input-placeholder {
+  font-family: var(--ff-secondary);
+  color: var(--clr-grey-5);
+}
+#grocery::-moz-placeholder {
+  font-family: var(--ff-secondary);
+  color: var(--clr-grey-5);
+}
+#grocery:-ms-input-placeholder {
+  font-family: var(--ff-secondary);
+  color: var(--clr-grey-5);
+}
+#grocery::-ms-input-placeholder {
+  font-family: var(--ff-secondary);
+  color: var(--clr-grey-5);
+}
 #grocery::placeholder {
   font-family: var(--ff-secondary);
   color: var(--clr-grey-5);
