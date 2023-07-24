@@ -15,6 +15,9 @@ let editId = ""
 
 // submit form
 form.addEventListener("submit", addItem)
+// clear items
+clearBtn.addEventListener("click", clearItems)
+// delete btn
 
 // ****** FUNCTIONS **********
 function addItem(e) {
@@ -38,10 +41,14 @@ function addItem(e) {
                 <i class="fas fa-trash"></i>
               </button>
             </div>`
+    const deleteBtn = element.querySelector(".delete-btn")
+    const editBtn = element.querySelector(".edit-btn")
+    deleteBtn.addEventListener("click", deleteItem)
+    editBtn.addEventListener("click", editItem)
     // append child
     list.appendChild(element)
     // displayAlert
-    displayAlert("Item add to the list", "success")
+    displayAlert("Item added to the list", "success")
     // show container
     container.classList.add("show-container")
     // add to local storage
@@ -63,9 +70,40 @@ function displayAlert(text, action) {
   setTimeout(() => {
     alert.textContent = ""
     alert.classList.remove(`alert-${action}`)
-  }, 2500)
+  }, 500)
 }
 
+// clear items
+function clearItems() {
+  const items = document.querySelectorAll(".grocery-item")
+
+  // if (items.length > 0) {
+  items.forEach((item) => {
+    list.removeChild(item)
+  })
+  // }
+  displayAlert("empty list", "danger")
+  setBackToDefault()
+  container.classList.remove("show-container")
+  // localStorage.removeItem("list")
+}
+
+// delete function
+function deleteItem(e) {
+  const element = e.currentTarget.parentElement.parentElement
+  // const id = element.dataset.id
+  list.removeChild(element)
+  if (list.children.length === 0) {
+    container.classList.remove("show-container")
+  }
+  displayAlert("item removed", "danger")
+  // remove from local storage
+  // removeFromLocalStorage(id)
+}
+// edit function
+function editItem() {
+  console.log("item edited")
+}
 // set back to default
 function setBackToDefault() {
   grocery.value = ""
@@ -75,6 +113,7 @@ function setBackToDefault() {
 }
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value) {
-  console.log("added to local storage")
+}
+function removeFromLocalStorage(id) {
 }
 // ****** SETUP ITEMS **********
