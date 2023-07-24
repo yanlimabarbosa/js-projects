@@ -12,3 +12,6 @@
 10 - https://scroll-yan.netlify.app/<br>
 11 - https://tabs-yan.netlify.app/<br>
 12 - https://countdown-timer-yan.netlify.app/<br>
+13 - https://lorem-ipsum-yan.netlify.app/<br>
+14 - https://grocery-bud-yan.netlify.app/<br>
+15 - https://slider-yan.netlify.app/<br>
