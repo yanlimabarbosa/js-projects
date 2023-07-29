@@ -17,4 +17,6 @@
 13 - https://lorem-ipsum-yan.netlify.app/<br>
 14 - https://grocery-bud-yan.netlify.app/<br>
 15 - https://slider-yan.netlify.app/<br>
-16- https://counter-oop-yan.netlify.app/<br>
+16 - https://counter-oop-yan.netlify.app/<br>
+17 - https://gallery-yan.netlify.app/<br>
+18 - 
