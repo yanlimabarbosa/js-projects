@@ -1,4 +1,4 @@
-# js-projects
+# JavaScript Projects
 
 ### DOM Projects:
 
@@ -17,6 +17,12 @@
 13 - https://lorem-ipsum-yan.netlify.app/<br>
 14 - https://grocery-bud-yan.netlify.app/<br>
 15 - https://slider-yan.netlify.app/<br>
+
+### OOP Projects:
 16 - https://counter-oop-yan.netlify.app/<br>
 17 - https://gallery-yan.netlify.app/<br>
-18 - 
+
+### DOM Projects with ES6+ Features:
+18 - https://numbers-yan.netlify.app/<br>
+19 - https://dark-mode-yan.netlify.app/<br>
+20 - https://filter-store-yan.netlify.app/<br>
