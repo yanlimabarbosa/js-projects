@@ -35,3 +35,4 @@
 22 - https://products-store-yan.netlify.app/index.html<br>
 23 - https://random-user-yan.netlify.app/<br>
 24 - https://cocktails-yan.netlify.app/<br>
+25 - https://es6-slider-yan.netlify.app<br>
