@@ -35,9 +35,7 @@
 22 - https://products-store-yan.netlify.app/index.html<br>
 23 - https://random-user-yan.netlify.app/<br>
 24 - https://cocktails-yan.netlify.app/<br>
-
-### Other Projects:
-
 25 - https://es6-slider-yan.netlify.app<br>
 26 - https://stripe-submenus-yan.netlify.app/<br>
-27 - https://wikipedia-yan.netlify.app<br>
+27 - https://pagination-yan.netlify.app/<br>
+28 - https://wikipedia-yan.netlify.app/<br>
