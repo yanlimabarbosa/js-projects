@@ -36,7 +36,7 @@ const renderResults = (list) => {
   const cardsList = list
     .map((item) => {
       const { title, snippet, pageid } = item
-      return `<a href="https://pt.wikipedia.org/wiki/${title}" target="_blank">
+      return `<a href="https://pt.wikipedia.org/wiki/${value}" target="_blank">
             <h4>${title}</h4>
             <p>${snippet}</p>
           </a>`
