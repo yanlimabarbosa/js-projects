@@ -28,6 +28,27 @@ window.addEventListener("DOMContentLoaded", async function () {
     const response = await fetch(`${singleProductUrl}${urlID}`)
     if (response.status >= 200 && response.status <= 299) {
       const product = await response.json()
+      // grab data
+      const { id, fields } = product
+      productID = id
+
+      const { name, company, price, colors, description } = fields
+      const image = fields.image[0].thumbnails.large.url
+      // set values
+      const capitalized = name.charAt(0).toUpperCase() + name.slice(1)
+      document.title = `${capitalized} | Comfy`
+      pageTitleDOM.textContent = `Home / ${name}`
+      imgDOM.src = image
+      titleDOM.textContent = name
+      companyDOM.textContent = `by ${company}`
+      priceDOM.textContent = formatPrice(price)
+      descDOM.textContent = description
+      colors.forEach((color) => {
+        const span = document.createElement("span")
+        span.classList.add("product-color")
+        span.style.backgroundColor = `${color}`
+        colorsDOM.appendChild(span)
+      })
     } else {
       console.log(response.status, response.statusText)
       centerDOM.innerHTML = `<div><h3>Sorry, something went wrong</h3><a href="index.html" class="btn">back home</a></div>`
@@ -36,4 +57,8 @@ window.addEventListener("DOMContentLoaded", async function () {
     console.log(error)
   }
   loading.style.display = "none"
+})
+
+cartBtn.addEventListener("click", function () {
+  addToCart(productID)
 })
