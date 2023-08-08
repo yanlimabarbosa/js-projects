@@ -84,7 +84,12 @@ function setupCartFunctionality() {
       element.parentElement.parentElement.remove()
     }
     // increase
+    if (parent.classList.contains("cart-item-increase-btn")) {
+      const newAmount = increaseAmount(parentID)
+      parent.nextElementSibling.textContent = newAmount
+    }
     // decrease
+    
     displayCartItemCount()
     displayCartTotal()
     setStorageItem("cart", cart)
