@@ -26,6 +26,10 @@ export const addToCart = (id) => {
     // add item to the DOM
     addToCartDOM(product)
   } else {
+    const amount = increaseAmount(id)
+    const items = [...cartItemsDOM.querySelectorAll(".cart-item-amount")]
+    const newAmount = items.find((value) => value.dataset.id === id)
+    newAmount.textContent = amount
   }
   // add one to the item count
   displayCartItemCount()
@@ -53,6 +57,18 @@ function displayCartItemsDOM() {
   cart.forEach((cartItem) => {
     addToCartDOM(cartItem)
   })
+}
+
+function increaseAmount(id) {
+  let newAmount
+  cart = cart.map((cartItem) => {
+    if (cartItem.id === id) {
+      newAmount = cartItem.amount + 1
+      cartItem = { ...cartItem, amount: cartItem.amount + 1 }
+    }
+    return cartItem
+  })
+  return newAmount
 }
 function setupCartFunctionality() {}
 
