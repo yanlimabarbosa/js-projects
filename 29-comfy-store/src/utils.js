@@ -1,6 +1,6 @@
 const allProductsUrl = "https://course-api.com/javascript-store-products"
 const singleProductUrl =
-  "https://course-api.com/javascript-store-single-product?id=rec43w3ipXvP28vog"
+  "https://course-api.com/javascript-store-single-product"
 
 const getElement = (selection) => {
   const element = document.querySelector(selection)
